@@ -36,10 +36,10 @@ function App() {
       {/* User controls */}
       <div className="button-controls">
         Size:
-        <button onClick={() => setSize('s')}>Small</button>
-        <button onClick={() => setSize('m')}>Medium</button>
-        <button onClick={() => setSize('l')}>Large</button>
-        <button onClick={() => setSize('xl')}>X-Large</button>
+        <button onClick={() => setSize("s")}>Small</button>
+        <button onClick={() => setSize("m")}>Medium</button>
+        <button onClick={() => setSize("l")}>Large</button>
+        <button onClick={() => setSize("xl")}>X-Large</button>
       </div>
       <div className="button-controls">
         Feather Count:
@@ -53,26 +53,41 @@ function App() {
       </div>
       <div className="button-controls">
         Feather Color(s):
-        <label><input
-          type="checkbox"
-          onChange={(e) => setIsRed(e.currentTarget.checked)}
-        />Red</label>
-        <label><input
-          type="checkbox"
-          onChange={(e) => setIsOrange(e.currentTarget.checked)}
-        />Orange</label>
-        <label><input
-          type="checkbox"
-          onChange={(e) => setIsBrown(e.currentTarget.checked)}
-        />Brown</label>
-        <label><input
-          type="checkbox"
-          onChange={(e) => setIsLightBrown(e.currentTarget.checked)}
-        />Light Brown</label>
-        <label><input
-          type="checkbox"
-          onChange={(e) => setIsYellow(e.currentTarget.checked)}
-        />Golden Yellow</label>
+        <label>
+          <input
+            type="checkbox"
+            onChange={(e) => setIsRed(e.currentTarget.checked)}
+          />
+          Red
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            onChange={(e) => setIsOrange(e.currentTarget.checked)}
+          />
+          Orange
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            onChange={(e) => setIsBrown(e.currentTarget.checked)}
+          />
+          Brown
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            onChange={(e) => setIsLightBrown(e.currentTarget.checked)}
+          />
+          Light Brown
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            onChange={(e) => setIsYellow(e.currentTarget.checked)}
+          />
+          Golden Yellow
+        </label>
       </div>
 
       {/* Generated display based on user selections above */}
@@ -82,7 +97,7 @@ function App() {
         featherCount={featherCount}
         featherColors={featherColors}
       />
-      <Message size={size} />
+      <Message size={size} featherCount={featherCount} />
     </>
   );
 }

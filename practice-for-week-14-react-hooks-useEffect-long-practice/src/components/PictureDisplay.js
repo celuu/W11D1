@@ -29,7 +29,7 @@ function PictureDisplay ({ size, featherCount, featherColors }) {
   //   console.log('PictureDisplay', size, featherCount, featherColors);
   // }, [size, featherCount, featherColors]);
 
-  
+  const [sizeClass, setSizeClass] = useState('');
 
   useEffect(()=>{
     console.log('PictureDisplay size', size);
@@ -48,7 +48,7 @@ function PictureDisplay ({ size, featherCount, featherColors }) {
         cname = 'small';
         break;
     }
-    console.log(cname);
+    setSizeClass(cname);
   }, [size]);
 
   useEffect(() => {
@@ -67,15 +67,15 @@ function PictureDisplay ({ size, featherCount, featherColors }) {
   }
 
   return (
-    <div className={`image-area medium`}>
-      {colors.map((c, i) =>
-        <img  
-          key={feathers[i]} 
-          src={feathers[i]} 
-          className={`image-feather ${c}`} 
-          alt="" 
+    <div className={`image-area ${sizeClass}`}>
+      {colors.map((c, i) => (
+        <img
+          key={feathers[i]}
+          src={feathers[i]}
+          className={`image-feather ${c}`}
+          alt=""
         />
-      )}
+      ))}
 
       <img src={turkey} className="image-turkey" alt="turkey" />
     </div>
