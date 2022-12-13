@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import turkey from "../images/turkey.png";
 import feather1 from "../images/feather1.svg";
 import feather2 from "../images/feather2.svg";
@@ -29,8 +29,26 @@ function PictureDisplay ({ size, featherCount, featherColors }) {
   //   console.log('PictureDisplay', size, featherCount, featherColors);
   // }, [size, featherCount, featherColors]);
 
+  
+
   useEffect(()=>{
     console.log('PictureDisplay size', size);
+    let cname = "";
+    switch (size){
+      case 'm':
+        cname = 'medium';
+        break;
+      case 'l':
+        cname = 'large';
+        break;
+      case 'xl':
+        cname = 'xlarge';
+        break;
+      default:
+        cname = 'small';
+        break;
+    }
+    console.log(cname);
   }, [size]);
 
   useEffect(() => {
